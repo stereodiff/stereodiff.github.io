@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Lotus: Diffusion-based Visual Foundation Model for High-quality Dense Predictionn">
+  <meta name="keywords" content="depth, estimation, monocular, scene, reconstruction">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Lotus</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1FWSVCGZTG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-1FWSVCGZTG');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/bulma.min.css">
+  <link rel="stylesheet" href="./css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./css/twentytwenty.css">
+  <link rel="stylesheet" href="./css/index.css">
+  <link rel="icon" href="./images/lotus_icon.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+  <script src="./js/jquery-3.2.1.min.js"></script>
+  <script src="./js/jquery.event.move.js"></script>
+  <script src="./js/jquery.twentytwenty.js"></script>
+  <script src="./js/bulma-carousel.min.js"></script>
+  <script src="./js/bulma-slider.min.js"></script>
+  <script src="./js/fontawesome.all.min.js"></script>
+
+  <!--MathJax-->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+  <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">LOTUS: Diffusion-based Visual Foundation Model for High-quality Dense Prediction</h1>
+          <h3 class="title has-text-centered">arXiv 2024</h3>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?hl=en&user=RsLS11MAAAAJ" target="_blank" rel="noopener noreferrer">
+                Jing He<sup>1<span style="color:red;">&#10033;</span></sup>
+            </a>,
+            </span>
+            <span class="author-block">
+              <a href="https://haodong-li.com/" target="_blank" rel="noopener noreferrer">
+                Haodong Li<sup>1<span style="color:red;">&#10033;</span></sup>
+            </a>,
+            </span>
+            <span class="author-block">
+              <a href="https://yvanyin.net/" target="_blank" rel="noopener noreferrer">
+                Wei Yin<sup>2</sup></a>,
+            </span>
+            <span class="author-block">
+              <a href="https://yixunliang.github.io/" target="_blank" rel="noopener noreferrer">
+                Yixun Liang<sup>1</sup></a>,
+            </span>
+            <span class="author-block">
+              <a href="https://len-li.github.io/" target="_blank" rel="noopener noreferrer">
+                Leheng Li<sup>1</sup></a>,
+            </span>
+            <span class="author-block">
+                <a href="" target="_blank" rel="noopener noreferrer">
+                Kaiqiang Zhou<sup>3</sup></a>,
+              </span>
+              <br>
+            <span class="author-block">
+                <a href="" target="_blank" rel="noopener noreferrer">
+                Hongbo Zhang<sup>3</sup></a>,
+              </span>
+            <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=-rCulKwAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">
+                Bingbing Liu<sup>3</sup></a>,
+              </span>
+            <span class="author-block">
+              <a href="https://www.yingcong.me/" target="_blank" rel="noopener noreferrer">
+                Ying-Cong Chen<sup>1,4&#9993;</sup></a>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>HKUST(GZ)</span>
+            <span class="author-block"><sup>2</sup>University of Adelaide</span>
+            <span class="author-block"><sup>3</sup>Noah's Ark Lab</span>
+            <span class="author-block"><sup>4</sup>HKUST</span>
+            <span class="author-block">
+                <sup style="color:red;">&#10033;</sup><strong>Both authors contributed equally.</strong>
+                <sup>&#9993;</sup>Corresponding author.
+            </span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2409.18124" target="_blank" rel="noopener noreferrer"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv" style="font-size:23px"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/EnVision-Research/Lotus" target="_blank" rel="noopener noreferrer"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-github" style="font-size:23px"></i>
+                  </span>
+                  <span>
+                    Code
+                  </span>
+                </a>
+              </span>
+              <!-- Hugging Face Space (LCM). -->
+              <span class="link-block">
+                <a href="https://huggingface.co/spaces/haodongli/Lotus_Depth" target="_blank" rel="noopener noreferrer"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon" style="font-size:23px">
+                      &#129303;
+                  </span>
+                  <span>HF Demo - Depth</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://huggingface.co/spaces/haodongli/Lotus_Normal" target="_blank" rel="noopener noreferrer"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon" style="font-size:23px">
+                      &#129303;
+                  </span>
+                  <span>HF Demo - Normal</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://replicate.com/chenxwh/lotus" target="_blank" rel="noopener noreferrer"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <img class="icon" style="font-size:14px" src="images/re2.png">
+                  </img>
+                  <span>&#160;Replicate</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img id="teaser" width="100%" src="./images/teaser_1.jpg" alt="Teaser 1"/>
+      <img id="teaser" width="100%" src="./images/teaser_2.jpg" alt="Teaser 2"/>
+      <h2 class="subtitle">
+        We present <span class="methodname" style="font-weight: bold;">Lotus</span>, a diffusion-based visual foundation model for dense geometry prediction.
+        With minimal training data, <span class="methodname" style="font-weight: bold;">Lotus</span> achieves SoTA performance in two key geometry perception tasks, <i>i.e.</i>, zero-shot depth and normal estimation.
+        "Avg. Rank" indicates the average ranking across all metrics, where lower values are better. Bar length represents the amount of training data used.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+        <p>
+            Leveraging the visual priors of pre-trained text-to-image diffusion models offers a promising solution to enhance zero-shot generalization in dense prediction tasks.
+            However, existing methods often uncritically use the original diffusion formulation, which may not be optimal due to the fundamental differences between dense prediction and image generation.
+        </p><p>
+            In this paper, we provide a systemic analysis of the diffusion formulation for the dense prediction, focusing on both quality and efficiency. And we find that the original parameterization type for image generation, which learns to predict noise, is harmful for dense prediction; the multi-step noising/denoising diffusion process is also unnecessary and challenging to optimize.
+        </p><p>
+            Based on these insights, we introduce <span class="methodname" style="font-weight: bold;">Lotus</span>, a diffusion-based visual foundation model with a simple yet effective adaptation protocol for dense prediction.
+            Specifically, <span class="methodname" style="font-weight: bold;">Lotus</span> is trained to directly predict annotations instead of noise, thereby avoiding harmful variance. We also reformulate the diffusion process into a single-step procedure, simplifying optimization and significantly boosting inference speed.
+            Additionally, we introduce a novel tuning strategy called detail preserver, which achieves more accurate and fine-grained predictions.
+        </p><p>
+            Without scaling up the training data or model capacity, <span class="methodname" style="font-weight: bold;">Lotus</span> achieves SoTA performance in zero-shot depth and normal estimation across various datasets. 
+            It also enhances efficiency, being significantly faster than most existing diffusion-based methods.
+            <span class="methodname" style="font-weight: bold;">Lotus</span>' superior quality and efficiency also enable a wide range of practical applications, such as joint estimation, single/multi-view 3D reconstruction, etc.
+        </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Method. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Methodology</h2>
+        <div class="content has-text-justified">
+          <h3 class="title has-text-centered">
+            Fine-tuning Protocol
+          </h3>
+
+          <p>
+          After the pre-trained VAE encoder $\mathcal{E}$ encodes the image $\textbf{x}$ and annotation $\textbf{y}$ to the latent space:
+          &#9312;the denoiser U-Net model $f_\theta$ is fine-tuned using $x_0$-prediction;
+          &#9313;we employ single-step diffusion formulation at time-step $t=T$ for better coverage;
+          &#9314;we propose a novel detail preserver, to switch the model either to reconstruct the image or generate the dense prediction via a switcher $s$, ensuring a more fine-grained prediction.
+          The noise $\mathbf{z_T^y}$ in bracket is used for our generative <span class="methodname" style="font-weight: bold;">Lotus-G</span> and is omitted for the discriminative <span class="methodname" style="font-weight: bold;">Lotus-D</span>.
+        </p>
+          
+          <img id="method_train" width="100%" src="./images/method_training_compressed.jpg" alt="Marigold training scheme"/>
+
+          <h3 class="title has-text-centered">
+            Inference Scheme
+          </h3>
+
+          <p>
+            The standard Gaussian noise $\mathbf{z_T^y}$ and encoded RGB image $\mathbf{z^x}$ are concatenated to form the input. We set $t=T$ and
+            the switcher to $s_y$. The denoiser U-Net model then predicts the latent dense prediction that is further decoded to get the final output.
+            The noise $\mathbf{z_T^y}$ in bracket is used for <span class="methodname" style="font-weight: bold;">Lotus-G</span> and omitted for <span class="methodname" style="font-weight: bold;">Lotus-D</span>.
+          </p>
+
+          <img id="method_inference" width="50%" src="./images/method_inference_compressed.jpg" alt="Marigold inference scheme" style="display: block; margin: auto;"/>
+        </div>
+          <h2 class="title is-3">Experiments</h2>
+          <div class="content has-text-justified">
+          <h3 class="title has-text-centered">
+            Zero-shot Affine-invariant Depth Estimation
+          </h3>
+
+          <p>
+            Quantitative comparison of <span class="methodname" style="font-weight: bold;">Lotus</span> with SoTA affine-invariant depth estimators
+            on several zero-shot benchmarks. The upper section lists discriminative methods,
+            the lower lists generative ones. The <span style="background-color: rgb(255, 153, 0);">best</span> and 
+            <span style="background-color: rgb(255, 204, 153);">second best</span> performances are highlighted. 
+            <span class="methodname" style="font-weight: bold;">Lotus-G</span> outperforms all others methods while <span class="methodname" style="font-weight: bold;">Lotus-D</span> is slightly 
+            inferior to DepthAnything. Please note that DepthAnything is trained on $62.6$M images while 
+            <span class="methodname" style="font-weight: bold;">Lotus</span> is only trained on $0.059$M images.
+          </p>
+
+          <img id="comparison" width="100%" src="./images/exp_depth.png" alt="Comparison with other methods"/>
+
+          <h3 class="title has-text-centered">
+            Zero-shot Surface Normal Estimation
+          </h3>
+
+          <p>
+            Quantitative comparison of <span class="methodname" style="font-weight: bold;">Lotus</span> with SoTA surface normal estimators
+            on several zero-shot benchmarks. Both <span class="methodname" style="font-weight: bold;">Lotus-G</span> and <span class="methodname" style="font-weight: bold;">Lotus-D</span> outperform all other methods with significant margins.
+          </p>
+
+          <img id="comparison" width="100%" src="./images/exp_normal.png" alt="Comparison with other methods"/>
+
+          <p class="mt-5">
+            Please refer to our paper linked above for more technical details :)
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Method. -->
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre class="selectable"><code>@article{he2024lotus,
+    title={Lotus: Diffusion-based Visual Foundation Model for High-quality Dense Prediction},
+    author={He, Jing and Li, Haodong and Yin, Wei and Liang, Yixun and Li, Leheng and Zhou, Kaiqiang and Liu, Hongbo and Liu, Bingbing and Chen, Ying-Cong},
+    journal={arXiv preprint arXiv:2409.18124},
+    year={2024}
+}
+</code></pre>
+  </div>
+</section>
+
+<footer class="footer pt-4 pb-0">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            Website template based on
+            <a href="https://marigoldmonodepth.github.io/">
+            Marigold
+            </a>
+            and licensed under
+            <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+            CC-BY-SA-4.0
+            </a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
