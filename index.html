@@ -204,7 +204,7 @@
         <div class="content has-text-justified">
 
           <p>
-            Pipeline of <span class="methodname" style="font-weight: bold;">StereoDiff</span>. &#9312; All video frames are paired for stereo matching in the first stage, primarily focusing on static backgrounds, in order to achieve a strong global consistency. &#9313; Using the stereo matching-based video depth from the first stage, the second stage of <span class="methodname" style="font-weight: bold;">StereoDiff</span> applies a video depth diffusion for significantly improving the local consistency without sacrificing its original global consistency, resulting in video depth estimations with both strong global consistency and smooth local consistency.
+            Pipeline of <span class="methodname" style="font-weight: bold;">StereoDiff</span>. &#9312; All video frames are paired for stereo matching in the first stage, primarily focusing on static backgrounds, in order to achieve a strong global consistency that provided by global 3D constraints. &#9313; Using the stereo matching-based video depth from the first stage, the second stage of <span class="methodname" style="font-weight: bold;">StereoDiff</span> applies a video depth diffusion for significantly improving the local consistency without sacrificing its original global consistency, resulting in video depth estimations with both strong global consistency and smooth local consistency.
         </p>
           
           <img id="method_train" width="100%" src="./images/pipe.jpg" alt="Marigold training scheme"/>
