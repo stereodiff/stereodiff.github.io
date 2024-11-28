@@ -203,8 +203,8 @@
         <h2 class="title is-3">Methodology</h2>
         <div class="content has-text-justified">
 
-          <p>
-            Pipeline of <span class="methodname" style="font-weight: bold;">StereoDiff</span>. &#9312; All video frames are paired for stereo matching in the first stage, primarily focusing on static backgrounds, in order to achieve a strong global consistency that provided by global 3D constraints. &#9313; Using the stereo matching-based video depth from the first stage, the second stage of <span class="methodname" style="font-weight: bold;">StereoDiff</span> applies a video depth diffusion for significantly improving the local consistency without sacrificing its original global consistency, resulting in video depth estimations with both strong global consistency and smooth local consistency.
+        <p>
+            <strong>Pipeline of <span class="methodname" style="font-weight: bold;">StereoDiff</span>.</strong> &#9312; All video frames are paired for stereo matching in the first stage, primarily focusing on static backgrounds, in order to achieve a strong global consistency that provided by global 3D constraints. &#9313; Using the stereo matching-based video depth from the first stage, the second stage of <span class="methodname" style="font-weight: bold;">StereoDiff</span> applies a video depth diffusion for significantly improving the local consistency without sacrificing its original global consistency, resulting in video depth estimations with both strong global consistency and smooth local consistency.
         </p>
           
           <img id="method_train" width="100%" src="./images/pipe.jpg" alt="Marigold training scheme"/>
@@ -214,7 +214,7 @@
           <div class="content has-text-justified">
 
           <p>
-            Quantitative comparison of <span class="methodname" style="font-weight: bold;">StereoDiff</span> with SoTA methods on zero-shot, real-world, dynamic video depth benchmarks. The four sections from top to bottom represent: image depth estimators, stereo matching-based estimators, video depth diffusion models, and <span class="methodname" style="font-weight: bold;">StereoDiff</span>.
+            <strong>Quantitative comparison of <span class="methodname" style="font-weight: bold;">StereoDiff</span> with SoTA methods on zero-shot, real-world, dynamic video depth benchmarks.</strong> The four sections from top to bottom represent: image depth estimators, stereo matching-based estimators, video depth diffusion models, and <span class="methodname" style="font-weight: bold;">StereoDiff</span>.
             To ensure comprehensive evaluation, we used two datasets: Bonn for indoor scenes and KITTI for outdoor scenes.
             We report the mean metric value of <span class="methodname" style="font-weight: bold;">StereoDiff</span> across 10 independent runs.
             Best results are <strong>bolded</strong> and the second best are <u>underlined</u>.
