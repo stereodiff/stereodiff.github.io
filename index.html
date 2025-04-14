@@ -165,9 +165,15 @@
       <p style="text-align: center;">
         <img id="teaser" width="85%" src="./images/teaser_1.jpg" alt="Teaser 1"/>
       </p>
-      <h2 class="subtitle">
-        <span class="methodname" style="font-weight: bold;">StereoDiff</span> excels in delivering remarkable global and local consistency for video depth estimation. In terms of global consistency, <span class="methodname" style="font-weight: bold;">StereoDiff</span> achieves highly accurate and stable depth maps on static backgrounds across consecutive windows, leveraging stereo matching to prevent the abrupt depth shifts often seen in DepthCrafter, where depth values on static backgrounds can vary significantly between adjacent windows. For local consistency, <span class="methodname" style="font-weight: bold;">StereoDiff</span> yields much smoother, flicker-free depth values across consecutive frames, especially in dynamic regions. In contrast, MonST3R suffers from frequent, pronounced flickering and jitters in these areas.
-      </h2>
+      <div class="content has-text-justified">
+        <p>
+          <span class="methodname" style="font-weight: bold;">StereoDiff</span> excels in delivering remarkable global and local consistency for video depth estimation.<br>
+        </p><p>
+          In terms of global consistency, <span class="methodname" style="font-weight: bold;">StereoDiff</span> achieves highly accurate and stable depth maps on static backgrounds across consecutive windows, leveraging stereo matching to prevent the abrupt depth shifts often seen in DepthCrafter, where depth values on static backgrounds can vary significantly between adjacent windows.
+        </p><p>
+          For local consistency, <span class="methodname" style="font-weight: bold;">StereoDiff</span> yields much smoother, flicker-free depth values across consecutive frames, especially in dynamic regions. In contrast, MonST3R suffers from frequent, pronounced flickering and jitters in these areas.
+        </p>
+      </div>
     </div>
   </div>
 </section>
@@ -191,7 +197,6 @@
             We mathematically demonstrate how stereo matching and video depth diffusion offer complementary strengths through frequency domain analysis, highlighting the effectiveness of their synergy in capturing the advantages of both.
         </p><p>
             Experimental results on zero-shot, real-world, dynamic video depth benchmarks, both indoor and outdoor, demonstrate <span class="methodname" style="font-weight: bold;">StereoDiff</span>'s SoTA performance, showcasing its superior consistency and accuracy in video depth estimation.
-            In this paper, we provide a systemic analysis of the diffusion formulation for the dense prediction, focusing on both quality and efficiency. And we find that the original parameterization type for image generation, which learns to predict noise, is harmful for dense prediction; the multi-step noising/denoising diffusion process is also unnecessary and challenging to optimize.
         </p>
         </div>
       </div>
@@ -219,9 +224,13 @@
           <div class="content has-text-justified">
 
           <p>
-            <strong>Quantitative comparison of <span class="methodname" style="font-weight: bold;">StereoDiff</span> with SoTA methods on zero-shot, real-world, dynamic video depth benchmarks.</strong> The four sections from top to bottom represent: image depth estimators, stereo matching-based estimators, video depth diffusion models, and <span class="methodname" style="font-weight: bold;">StereoDiff</span>.
-            To ensure comprehensive evaluation, we used two datasets: Bonn for indoor scenes and KITTI for outdoor scenes.
-            We report the mean metric value of <span class="methodname" style="font-weight: bold;">StereoDiff</span> across 10 independent runs.
+            <strong>Quantitative comparison of <span class="methodname" style="font-weight: bold;">StereoDiff</span> with SoTA methods on zero-shot video depth benchmarks.</strong>
+            The five sections from top to bottom represent: image depth estimators, stereo matching-based estimators, video depth diffusion models,
+            <span class="methodname" style="font-weight: bold;">StereoDiff</span> using other stereo matching methods,
+            and <span class="methodname" style="font-weight: bold;">StereoDiff</span>.
+            To make sure a comprehensive evaluation, we used four datasets: Bonn, KITTI, ScanNetV2, and Sintel.
+            We report the mean metrics of <span class="methodname" style="font-weight: bold;">StereoDiff</span> across 10 independent runs.
+            MonST3R<sub><strong>OPT</strong></sub> (<sub><strong>OPT</strong></sub>: with optimization) can not be evaluated on long video depth benchmarks (<i>i.e.</i>, Bonn and ScanNetV2) due to computational constraints.
             Best results are <strong>bolded</strong> and the second best are <u>underlined</u>.
           </p>
 
