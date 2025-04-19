@@ -167,6 +167,8 @@
           In terms of global consistency, <span class="methodname" style="font-weight: bold;">StereoDiff</span> achieves highly accurate and stable depth maps on static backgrounds across consecutive windows, leveraging stereo matching to prevent the abrupt depth shifts often seen in DepthCrafter, where depth values on static backgrounds can vary significantly between adjacent windows.
         </p><p>
           For local consistency, <span class="methodname" style="font-weight: bold;">StereoDiff</span> yields much smoother, flicker-free depth values across consecutive frames, especially in dynamic regions. In contrast, MonST3R suffers from frequent, pronounced flickering and jitters in these areas.
+        </p><p>
+          <strong>Why not using dynamic 3D point clouds for comparison? Because the video depth maps are <a style="color: red;">clear enough</a> to illustrate <span class="methodname" style="font-weight: bold;">StereoDiff</span>'s superiority.</strong>
         </p>
       </div>
     </div>
