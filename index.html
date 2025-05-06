@@ -168,8 +168,13 @@
         </p><p>
           For local consistency, <span class="methodname" style="font-weight: bold;">StereoDiff</span> yields much smoother, flicker-free depth values across consecutive frames, especially in dynamic regions. In contrast, MonST3R suffers from frequent, pronounced flickering and jitters in these areas.
         </p><p>
-          <strong>Why not using dynamic 3D point clouds for comparison?<br>Because the video depth maps are <a style="color: red;">clear enough</a> to illustrate <span class="methodname" style="font-weight: bold;">StereoDiff</span>'s superiority.
-          Please download the "Video Results" linked above if you are interested about the GT video depth and the comparison on more cases.</strong>
+          <strong>
+            No dynamic point clouds comparison?
+          </strong>
+        </p><p>
+          When the video depth maps are clear enough to illustrate <span class="methodname" style="font-weight: bold;">StereoDiff</span>'s superiority,
+          we kindly choose not to use dynamic 3D point clouds for comparison.
+          Please download the "Video Results" linked above if you are interested about the GT video depth and the comparison on more cases.
         </p>
       </div>
     </div>
@@ -236,18 +241,14 @@
 
           <p><strong>
             No temporal consistency metrics?
-          </p><p>
-            We kindly argue that the metrics above are <a style="color: red;">not</a> in per-frame manner.
-            <a style="color: red;">All frames</a> in a predicted video depth use <a style="color: red;">same</a> scale and shift factors for affine-invariant evaluation.
+          </strong></p><p>
+            The metrics above are not in per-frame manner.
+            All frames in a predicted video depth use same scale and shift factors for affine-invariant evaluation.
             Temporal inconsistencies will lead to worse metrics. Testing MonST3R on Bonn with per-frame scale and shift yields an AbsRel of 0.0341, much better than the reported 0.0818.
           </p><p>
             Note that accepted works like <a href="https://depthcrafter.github.io/" target="_blank" rel="noopener noreferrer">DepthCrafter</a> (CVPR 2025), 
             <a href="https://monst3r-project.github.io/" target="_blank" rel="noopener noreferrer">MonST3R</a> (ICLR 2025), and 
-            <a href="https://rollingdepth.github.io/" target="_blank" rel="noopener noreferrer">RollingDepth</a> (CVPR 2025) also have <a style="color: red;">no</a> temporal consistency metrics in their papers, we share the same metrics.
-          </strong></p>
-
-          <p class="mt-5">
-            Please refer to our paper linked above for more technical details.
+            <a href="https://rollingdepth.github.io/" target="_blank" rel="noopener noreferrer">RollingDepth</a> (CVPR 2025) share the same metrics with this work, without temporal consistency metrics .
           </p>
         </div>
       </div>
