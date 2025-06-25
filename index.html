@@ -167,14 +167,6 @@
           In terms of global consistency, <span class="methodname" style="font-weight: bold;">StereoDiff</span> achieves highly accurate and stable depth maps on static backgrounds across consecutive windows, leveraging stereo matching to prevent the abrupt depth shifts often seen in DepthCrafter, where depth values on static backgrounds can vary significantly between adjacent windows.
         </p><p>
           For local consistency, <span class="methodname" style="font-weight: bold;">StereoDiff</span> yields much smoother, flicker-free depth values across consecutive frames, especially in dynamic regions. In contrast, MonST3R suffers from frequent, pronounced flickering and jitters in these areas.
-        </p><p>
-          <strong>
-            No dynamic point clouds comparison?
-          </strong>
-        </p><p>
-          When the video depth maps are clear enough to illustrate <span class="methodname" style="font-weight: bold;">StereoDiff</span>'s superiority,
-          we kindly choose not to use dynamic 3D point clouds for comparison.
-          Please download the "Video Results" linked above if you are interested about the GT video depth and the comparison on more cases.
         </p>
       </div>
     </div>
@@ -245,10 +237,6 @@
             The metrics above are not in per-frame manner.
             All frames in a predicted video depth use same scale and shift factors for affine-invariant evaluation.
             Temporal inconsistencies will lead to worse metrics. Testing MonST3R on Bonn with per-frame scale and shift yields an AbsRel of 0.0341, much better than the reported 0.0818.
-          </p><p>
-            Note that accepted works like <a href="https://depthcrafter.github.io/" target="_blank" rel="noopener noreferrer">DepthCrafter</a> (CVPR 2025), 
-            <a href="https://monst3r-project.github.io/" target="_blank" rel="noopener noreferrer">MonST3R</a> (ICLR 2025), and 
-            <a href="https://rollingdepth.github.io/" target="_blank" rel="noopener noreferrer">RollingDepth</a> (CVPR 2025) share the same metrics with this work, without temporal consistency metrics .
           </p>
         </div>
       </div>
